@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../StylesCSS/Styles.css">
+    <title>شهادة اقرار بتغيير</title>
+    <script>
+        window.onload = function(){
+            var numB = sessionStorage.getItem("numB");
+            var nom = sessionStorage.getItem("nom");
+            var nomA = sessionStorage.getItem("nomA");
+            var cin = sessionStorage.getItem("cin");
+            var cinA = sessionStorage.getItem("cinA");
+            var superficie = sessionStorage.getItem("superficie");
+            var adresseB = sessionStorage.getItem("adresseB");
+            var adresseP = sessionStorage.getItem("adresseP");
+            var dateCh = sessionStorage.getItem("dateCh");
+            var statut = sessionStorage.getItem("statut");
+
+            document.querySelector("#numIm").innerHTML = numB;
+            document.querySelector("#nomP").innerHTML = nom;
+            document.querySelector("#adrP").innerHTML = adresseP;
+            document.querySelector("#cinP").innerHTML = cin;
+            document.querySelector("#adrIm").innerHTML = adresseB;
+            document.querySelector("#superficie").innerHTML = superficie;
+            document.querySelector("#statut").innerHTML = statut;
+            document.querySelector("#acheteur").innerHTML = nomA;
+            document.querySelector("#cinA").innerHTML = cinA;
+            let today = new Date();
+            let yyyy = today.getFullYear();
+            let mm = today.getMonth() + 1;
+            let dd = today.getDate();
+            if (dd < 10) dd = '0' + dd;
+            if (mm < 10) mm = '0' + mm;
+            var formattedToday = dd + '/' + mm + '/' + yyyy;
+            document.querySelector("#date").innerHTML = formattedToday;
+            document.querySelector("#dateCh").innerHTML = formattedToday;
+            window.print();
+        };
+    </script>
+</head>
+<body>
+    <div class="container mt-2">
+        <span class="infoGen">
+            <div class="d-flex justify-content-between mb-2">
+                <span>
+                    المملكــــــــــــة المغربيـــــــــــــة<br>
+                    وزارة الداخليــــــــــــــــــــــــــــــــــة<br>
+                    ولاية جهة بني ملال خنيفـــرة<br>
+                    اقليـــــــــــم بنـــي مـــــــــــــــــلال<br>
+                    الجماعة الترابية قصبة تادلـة<br>
+                    <small>مصلحة الوعاء الضريبي</small> <br>
+                </span>
+                <span class="text-center">
+                    <h5>الرسم المفروض على الأراضي</h5>
+                    <h5>الحضرية الغير مبنية</h5>
+                </span>
+                <span>
+                    ملحق رقم 2 <br>
+                    <small>يتمم من طرف المصلحة الجماعية للوعاء الضريبي<br></small>
+                    رقم الاقرار.........:سلم ب :..........<br>
+                    عن الامر بالصرف........<br>
+                    التوقيع:.............<br>
+                </span>
+            </div>
+        </span>
+        <span class="title">
+            <h2>
+                اقـــــــــــــــــــــــــــــــــــرار
+            </h2>
+            <h4>
+                بوقوع تغيير في ارض حضرية غير مبنية
+            </h4>
+        </span>
+        <div class="content fs-6">
+            الاسم العائلي و الشخصي أو الاسم التجاري: <span id="nomP">..........................................................</span> <br>
+            عنوان السكنى الاعتيادية أو عنوان المؤسسة الرئيسية: <span id="adrP">..........................................................</span> <br>
+            رقم التعريف الوطنية (رقم الاقامة للاجانب ):  <span id="cinP">..........................................................</span> <br>
+            رقم الهاتف : <span id="telP">.............................</span> الفاكس : <span id="faxeP">.............................</span> <br>
+            <div class="d-flex justify-content-between mb-2">
+                <span>صفة صاحب الاقرار</span>
+                <span class="d-flex flex-column justify-content-between mb-2">
+                    <div class="d-flex flex-row justify-content-between">
+                        <div class="form-check">
+                            <input class="form-check-input btn-lg me-1" style="height: 30px;" type="checkbox" value="" id="Proprietaire">
+                            <label class="form-check-label mx-3" for="Proprietaire">مـالــك</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input btn-lg" style="height: 30px;" type="checkbox" value="" id="exploiteur">
+                            <label class="form-check-label mx-3" for="exploiteur">مستغل</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input btn-lg" style="height: 30px;" type="checkbox" value="" id="حائز">
+                            <label class="form-check-label mx-3" for="حائز">حـــائــز</label>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-start">
+                        <div class="form-check">
+                            <input class="form-check-input btn-lg" style="height: 30px;" type="checkbox" value="" id="تفويت">
+                            <label class="form-check-label mx-3" for="تفويت">تفويت</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input btn-lg me-3" style="height: 30px;" type="checkbox" value="" id="construction">
+                            <label class="form-check-label mx-3" for="construction">بــنــاء</label>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-start">
+                        <div class="form-check">
+                            <input class="form-check-input btn-lg me-1" style="height: 30px;" type="checkbox" value="" id="تجزئة">
+                            <label class="form-check-label mx-3" for="تجزئة">تجزئــة</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input btn-lg me-1" style="height: 30px;" type="checkbox" value="" id="تهيئة">
+                            <label class="form-check-label mx-3" for="تهيئة">تهيــئـــة</label>
+                        </div>
+                    </div>
+                </span>
+                <!--span class="d-flex flex-column justify-content-between mb-2">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-check">
+                                <input class="form-check-input btn-lg " style="height: 30px;" type="checkbox" value="" id="Proprietaire">
+                                <label class="form-check-label mx-3" for="Proprietaire">مالك</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-check">
+                                <input class="form-check-input btn-lg " style="height: 30px;" type="checkbox" value="" id="Proprietaire">
+                                <label class="form-check-label mx-3" for="Proprietaire">مستغل</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-check">
+                                <input class="form-check-input btn-lg " style="height: 30px;" type="checkbox" value="" id="Proprietaire">
+                                <label class="form-check-label mx-3" for="Proprietaire">حائز</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-check">
+                                <input class="form-check-input btn-lg " style="height: 30px;" type="checkbox" value="" id="Proprietaire">
+                                <label class="form-check-label mx-3" for="Proprietaire">بناء</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-check">
+                                <input class="form-check-input btn-lg " style="height: 30px;" type="checkbox" value="" id="Proprietaire">
+                                <label class="form-check-label mx-3" for="Proprietaire">تفويت</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-check">
+                                <input class="form-check-input btn-lg " style="height: 30px;" type="checkbox" value="" id="Proprietaire">
+                                <label class="form-check-label mx-3" for="Proprietaire">تجزئة</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-check">
+                                <input class="form-check-input btn-lg " style="height: 30px;" type="checkbox" value="" id="Proprietaire">
+                                <label class="form-check-label mx-3" for="Proprietaire">مالك</label>
+                            </div>
+                        </div>
+                    </div>
+                </span -->
+                <span class="me-4">
+                    تم تفويت البقعة الأرضية السيد <br>
+                    <span id="acheteur">.................................</span> <br>
+                    الحامل للبطاقة الوطنية رقم <span id="cinA">.................</span>
+                </span>
+            </div>
+              موقع العقار : <span id="adrIm">..........................................................</span> <br>
+              رسم عقاري عدد  : <span id="numIm">..........................................................</span> <br>
+              المساحة (بالمتر المربع): <span id="superficie">..........................................................</span> <br>
+              الحصة في ملكية مشاعة: <span id="statut">..........................................................</span> <br>
+              بيانات تصفية الرسم الى حدود تاريخ وقوع التغيير : <span id="dateCh">..........................................................</span> <br>
+              يجب ان يرفق الاقراربمستخرج من الرسم الطوبوغرافي للعقار<br>
+              في حال الملكية المشاعة بين عدد من الشركاء ¸يجب ان يرفق هدا الاقرار بقائمة اسماء جميع الشركاء وعناوينهم وحصة كل واحد في الملكية
+              <div class="text-start">
+                انا الموقع اسفله اشهد بصحة البيانات الواردة بهذا الاقرار <br>
+                في قصبة تادلة بتاريخ : <span id="date">.............................</span> <br>
+                <span style="margin-left: 150px;">امضاء المصرح :</span>
+              </div>
+              <small style="position: fixed; right : 10px; bottom : 0;">طبقا لمقتضيات المادة 48 من القانون، يجب وضع هذا الاقرار داخل اجل 45 يوما الموالية لتاريخ وقوع أحد التغييرات السالفة الذكر</small>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://kit.fontawesome.com/8a930d5c38.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="../ScriptsJS/Scripts.js"></script></body>
+</html>

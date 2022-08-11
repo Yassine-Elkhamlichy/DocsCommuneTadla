@@ -1,0 +1,134 @@
+:root{
+    --black:#192a56;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none; border:none;
+    transition: all .2s linear;
+}
+a{
+    text-decoration: none;
+}
+header{
+    font-size: 52.5%;
+    position: fixed;
+    top:0; left: 0; right:0;
+    padding:1rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+header .logo{
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+header .navbar a{
+    font-size: 1rem;
+    border-radius: .5rem;
+    padding:.2rem .5rem;
+    color:var(--light-color);
+    margin-left: 2px;
+}
+header .navbar a.active,
+header .navbar a:hover{
+    color:#fff;
+    background: #3DB2FF;
+    transform: scale(0.8);
+}
+header .icons #menu-bars{
+    display: none;
+}
+header .icons i,
+header .icons a{
+    cursor: pointer;
+    margin-left: .5rem;
+    height:4.5rem;
+    line-height: 4.5rem;
+    width:4.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color:var(--black);
+    border-radius: 50%;
+    background: #eee;
+}
+header .icons i:hover,
+header .icons a:hover{
+    color:#fff;
+    background: #3DB2FF;
+    transform: rotate(360deg);
+}
+header .icons #menu-bars{
+    display: none;
+}
+/* Docs */
+.title{
+    margin-right: 150px;
+    text-align: center;
+    position: relative;
+    top: -45px;
+}
+
+small{
+    font-size: 13px;
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li::before{
+    content: "- ";
+    padding-right: 5px;
+}
+.size{
+    font-size: 15px;
+}
+#GrpdatesPaiment{
+    display: none;
+}
+/* index */
+.card{
+    text-align: right;
+}
+.card:hover{
+    background-color: #3DB2FF;
+    color: white;
+}
+/*
+    Responsive Header
+*/
+@media (max-width:991px){
+    header{
+        padding:1rem 2rem;
+    }
+}
+@media (max-width:768px){
+    header .icons #menu-bars{
+        display: inline-block;
+    }
+    header .navbar{
+        position: absolute;
+        top:100%; left:0; right:0;
+        background:#fff;
+        border-top: .1rem solid rgba(0,0,0,.2);
+        border-bottom: .1rem solid rgba(0,0,0,.2);
+        padding:1rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    header .navbar a{
+        display: block;
+        padding:1rem;
+        margin:1.5rem;
+        font-size: 1rem;
+        background:#eee;
+    }
+}
